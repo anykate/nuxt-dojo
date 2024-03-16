@@ -8,6 +8,10 @@
 
 <script setup>
 const { data: products } = await useFetch('https://fakestoreapi.com/products')
+
+useHead({
+	title: 'Nuxt Dojo | Products'
+})
 </script>
 
 <style scoped></style>

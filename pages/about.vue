@@ -9,7 +9,9 @@
 </template>
 
 <script setup>
-
+useHead({
+	title: 'Nuxt Dojo | About'
+})
 </script>
 
 <style scoped>
