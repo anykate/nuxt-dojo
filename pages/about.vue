@@ -31,6 +31,10 @@ if (!greeting.value) {
 		fatal: true
 	})
 }
+
+onUnmounted(() => {
+	greeting.value = null;
+})
 </script>
 
 <style scoped>
