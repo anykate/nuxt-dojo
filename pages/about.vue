@@ -23,6 +23,14 @@ const { data: greeting } = await useFetch('/api/ninja?name=Aniket', {
 		surname: 'Aryamane'
 	}
 })
+
+if (!greeting.value) {
+	throw createError({
+		statusCode: 404,
+		statusMessage: 'Error communicating with CurrenciesAPI !!',
+		fatal: true
+	})
+}
 </script>
 
 <style scoped>
