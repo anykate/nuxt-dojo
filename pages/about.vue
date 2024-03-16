@@ -1,16 +1,27 @@
 <template>
 	<div>
-		<h2>About</h2>
+		<h2>About - {{ greeting.message }}</h2>
 		<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores vitae veritatis temporibus pariatur magni!
 			Ullam expedita sed quos adipisci in</p>
-		<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores vitae veritatis temporibus pariatur magni!
-			Ullam expedita sed quos adipisci in</p>
+		<p class="text-xl card">INR Info :
+		<p class="mt-4 info font-bold">Symbol: {{ greeting.data.INR.symbol }}</p>
+		<p class="info font-bold">Name: {{ greeting.data.INR.name }}</p>
+		<p class="info font-bold">Code: {{ greeting.data.INR.code }}</p>
+		</p>
 	</div>
 </template>
 
 <script setup>
 useHead({
 	title: 'Nuxt Dojo | About'
+})
+
+const { data: greeting } = await useFetch('/api/ninja?name=Aniket', {
+	method: 'post',
+	body: {
+		age: 46,
+		surname: 'Aryamane'
+	}
 })
 </script>
 
@@ -20,7 +31,7 @@ h2 {
 	font-size: 36px;
 }
 
-p {
+p:not(.info) {
 	margin: 20px 0;
 }
 </style>

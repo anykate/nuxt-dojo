@@ -73,4 +73,7 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
 # nuxt-dojo
+
+## Rename .env.example to .env and replace `your_api_key` with your API key from [CurrencyAPI](https://currencyapi.com/){:target="\_blank"} to get the currency information on `/about` page
